@@ -8,3 +8,10 @@ services:
     restart: unless-stopped
     ports:
       - '3005:8080'
+    environment:
+      - VITE_DEFAULT_LANGUAGE=id
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '1'

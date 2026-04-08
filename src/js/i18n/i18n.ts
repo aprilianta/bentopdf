@@ -4,45 +4,13 @@ import HttpBackend from 'i18next-http-backend';
 // Supported languages
 export const supportedLanguages = [
   'en',
-  'ar',
-  'be',
-  'ru',
-  'fr',
-  'de',
-  'es',
-  'zh',
-  'zh-TW',
-  'vi',
-  'tr',
   'id',
-  'it',
-  'pt',
-  'nl',
-  'da',
-  'sv',
-  'ko',
 ] as const;
 export type SupportedLanguage = (typeof supportedLanguages)[number];
 
 export const languageNames: Record<SupportedLanguage, string> = {
   en: 'English',
-  ar: 'العربية',
-  be: 'Беларуская',
-  ru: 'Русский',
-  fr: 'Français',
-  de: 'Deutsch',
-  es: 'Español',
-  zh: '中文',
-  'zh-TW': '繁體中文（台灣）',
-  vi: 'Tiếng Việt',
-  tr: 'Türkçe',
   id: 'Bahasa Indonesia',
-  it: 'Italiano',
-  pt: 'Português',
-  nl: 'Nederlands',
-  da: 'Dansk',
-  sv: 'Svenska',
-  ko: '한국어',
 };
 
 export const getLanguageFromUrl = (): SupportedLanguage => {
@@ -94,7 +62,8 @@ export const getLanguageFromUrl = (): SupportedLanguage => {
     return envLang as SupportedLanguage;
   }
 
-  return 'en';
+  //return 'en';
+  return 'id';
 };
 
 let initialized = false;
@@ -108,7 +77,8 @@ export const initI18n = async (): Promise<typeof i18next> => {
 
   await i18next.use(HttpBackend).init({
     lng: currentLang,
-    fallbackLng: 'en',
+    //fallbackLng: 'en',
+    fallbackLng: 'id',
     supportedLngs: supportedLanguages as unknown as string[],
     ns: ['common', 'tools'],
     defaultNS: 'common',
