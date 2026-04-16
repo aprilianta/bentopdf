@@ -7,7 +7,7 @@ services:
     container_name: bentopdf
     restart: unless-stopped
     ports:
-      - '3005:8080'
+      - '3002:80'
     environment:
       - VITE_DEFAULT_LANGUAGE=id
     deploy:
