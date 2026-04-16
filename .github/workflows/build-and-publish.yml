@@ -3,7 +3,7 @@ name: Build and Push Docker Images (Default + Simple Mode)
 on:
   push:
     branches:
-      - "main"
+      - "ops/dockerize"
     tags:
       - "v*"
   workflow_dispatch:
