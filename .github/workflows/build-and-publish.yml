@@ -56,7 +56,8 @@ jobs:
   # Build each platform natively in parallel, then merge manifests
   build-amd64:
     runs-on: ubuntu-latest
-    if: github.repository == 'alam00000/bentopdf'
+    #if: github.repository == 'alam00000/bentopdf'
+    if: github.repository == 'aprilianta/bentopdf'
     permissions:
       contents: read
       packages: write
